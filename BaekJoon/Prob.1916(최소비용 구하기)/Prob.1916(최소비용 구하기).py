@@ -15,7 +15,7 @@ for i in range(M):
 
 start,end=map(int,input().split())
 
-charges={node:INF for node in range(1,N+1)} 다익스트라를 위한 요금 그래프, 일종의 메모이제이션, 시작점이 정해져있기 때문에 딕셔너리를 이중으로 구성할 필요가 없음
+charges={node:INF for node in range(1,N+1)} #다익스트라를 위한 요금 그래프, 일종의 메모이제이션, 시작점이 정해져있기 때문에 딕셔너리를 이중으로 구성할 필요가 없음
 
 def Dijkstra(start,end):
     charges[start]=0 # 시작점으로 가는 비용은 0
@@ -25,7 +25,7 @@ def Dijkstra(start,end):
     while heap:
         tmp=heapq.heappop(heap)
 
-        if tmp[0]>charges[tmp[1]]: 만약 해당 차례 탐색 경로가 이미 구해져 있고 비용이 이미 구해진 비용보다 클 시엔 해당 차례를 무시 
+        if tmp[0]>charges[tmp[1]]: #만약 해당 차례 탐색 경로가 이미 구해져 있고 비용이 이미 구해진 비용보다 클 시엔 해당 차례를 무시 
             continue
 
         for next_destination,new_charge in graph[tmp[1]].items(): # 현재 위치와 연결된 노드 중 다음 경로를 선택
