@@ -13,7 +13,7 @@ r_dia=[True for i in range(2*n-1)]
 
 result=0 # N-Queen이 놓일 수 있는 경우의 수
 def solve(row):
-    if row==n: # 마지막 row까지 탐색이 진행되었다면 경우의 수 +1
+    if row==n: # 마지막 row까지 탐색이 진행되었다면 경우의 수 +1, row 수와 Queen의 수가 같기 때문에 문제 조건을 만족시키는 경우는 반드시 row와 Queen의 수가 
         global result
         result+=1
     else:
